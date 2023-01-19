@@ -35,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #0C102D;
     background-image: url('/bg-front.png'), url('/bg.png');
     background-repeat: no-repeat, no-repeat;
-    background-position: center top, top center;
+    background-position: center center, top center;
     background-size: 1225px, 1920px;
     overflow-x: hidden;
   }
