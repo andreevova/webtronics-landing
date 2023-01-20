@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { MOBILE } from '@/constants'
 
 export const Element = styled.div`
 	display: flex;
@@ -115,6 +116,10 @@ export const Item = styled.li<{ active: boolean }>`
 				flex: 1.25;
 			}
 		`}
+
+	${MOBILE} {
+		height: 200px;
+	}
 `
 
 export const Image = styled.img`

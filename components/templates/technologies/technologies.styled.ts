@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE } from '@/constants'
 import { Section, Title as UITitle } from '@/components/elements'
 import { Item as UIItem } from './components'
 
@@ -23,6 +24,11 @@ export const Grid = styled.ul`
 	grid-template-columns: repeat(4, 182px);
 	grid-gap: 25px;
 	margin-top: 55px;
+
+	${MOBILE} {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+	}
 `
 
 export const Item = styled(UIItem)``

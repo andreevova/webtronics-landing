@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE } from '@/constants'
 import { Section, Title as UITitle } from '@/components/elements'
 import { Item as UIItem } from './components'
 
@@ -17,6 +18,15 @@ export const Grid = styled.div`
 export const Item = styled(UIItem).withConfig<{ height: number }>({ shouldForwardProp: (prop) => !['height'].includes(prop) })`
 	position: relative;
 	width: calc(50% + 19px / 2);
+
+	${MOBILE} {
+		width: 100%;
+		margin-bottom: 60px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
 	&:not(:nth-child(1)) {
 		&:not(:nth-child(even))::before,
@@ -40,10 +50,20 @@ export const Item = styled(UIItem).withConfig<{ height: number }>({ shouldForwar
 		&:last-child::before {
 			display: none;
 		}
+
+		${MOBILE} {
+			&::before {
+				display: none;
+			}
+		}
 	}
 
 	&:nth-child(even) {
 		align-self: flex-end;
 		margin-top: ${(p) => `-${p.height / 2 - 10}px`};
+
+		${MOBILE} {
+			margin-top: 0;
+		}
 	}
 `

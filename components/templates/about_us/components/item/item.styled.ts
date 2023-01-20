@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import { MOBILE } from '@/constants'
 
 export const Element = styled.li`
 	display: flex;
 	flex-direction: column;
+
+	${MOBILE} {
+		text-align: center;
+	}
 `
 
 export const AvatarWrapper = styled.div`
@@ -11,6 +16,10 @@ export const AvatarWrapper = styled.div`
 	border-radius: 200px;
 	background: linear-gradient(152.14deg, rgba(21, 191, 253, 0.7) 9.96%, rgba(156, 55, 253, 0.7) 100%);
 	overflow: hidden;
+
+	${MOBILE} {
+		align-self: center;
+	}
 `
 
 export const Avatar = styled(Image)`

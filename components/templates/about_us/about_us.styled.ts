@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Section, Title as UITitle } from '@/components/elements'
+import { MOBILE } from '@/constants'
 import { LinesSvg, FrontSvg } from './img'
 import { Item as UIItem } from './components'
 
@@ -14,6 +15,11 @@ export const Container = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 50px;
+
+	${MOBILE} {
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
 `
 
 export const Mentors = styled.div`
@@ -32,6 +38,10 @@ export const Lines = styled(LinesSvg)`
 	width: 394px;
 	height: 157px;
 	margin-top: 10px;
+
+	${MOBILE} {
+		display: none;
+	}
 `
 
 export const Grid = styled.ul`
@@ -42,7 +52,17 @@ export const Grid = styled.ul`
 	& > * {
 		&:nth-child(2) {
 			margin-top: -50px;
+
+			${MOBILE} {
+				margin-top: 0;
+			}
 		}
+	}
+
+	${MOBILE} {
+		margin-top: 55px;
+		grid-template-columns: 1fr;
+		grid-gap: 50px;
 	}
 `
 
@@ -55,6 +75,11 @@ export const Info = styled.div`
 export const Text = styled.p`
 	line-height: 140%;
 	margin-top: 80px;
+
+	${MOBILE} {
+		margin-top: 50px;
+		text-align: center;
+	}
 `
 
 export const FrontText = styled(FrontSvg)`
@@ -62,4 +87,8 @@ export const FrontText = styled(FrontSvg)`
 	width: 748px;
 	height: 186px;
 	transform: translate(120px, 80px);
+
+	${MOBILE} {
+		display: none;
+	}
 `

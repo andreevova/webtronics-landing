@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { LAPTOP, MOBILE } from '@/constants'
 import { Section, Button as UIButton } from '@/components/elements'
 import { fadeInUp, fadeInRight, fadeInLeft } from './animations'
 
@@ -9,6 +10,21 @@ export const Grid = styled.div<{ columns: [string, string] }>`
 	grid-template-columns: ${(p) => p.columns.join(' ')};
 	grid-gap: 25px;
 	align-items: center;
+
+	${MOBILE} {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 25px;
+
+		&:nth-child(2) {
+			flex-direction: column-reverse;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 `
 
 export const Title = styled.h1<{ delay?: string }>`
@@ -18,6 +34,14 @@ export const Title = styled.h1<{ delay?: string }>`
 	white-space: nowrap;
 	overflow: hidden;
 	animation: ${fadeInUp} 0.5s ${(p) => p.delay} both;
+
+	${LAPTOP} {
+		font-size: 100px;
+	}
+
+	${MOBILE} {
+		font-size: 52px;
+	}
 `
 
 export const Text = styled.p<{ delay?: string }>`
@@ -34,4 +58,8 @@ export const Subtitle = styled.h3<{ delay?: string }>`
 	font-size: 32px;
 	align-self: flex-end;
 	animation: ${fadeInUp} 0.5s ${(p) => p.delay} both;
+
+	${MOBILE} {
+		align-self: center;
+	}
 `

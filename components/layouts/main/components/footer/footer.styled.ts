@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colord } from 'colord'
+import { MOBILE } from '@/constants'
 import { Company as UICompany, Navigation as UINavigation, Social as UISocial } from './components'
 
 export const Element = styled.footer`
@@ -17,6 +18,10 @@ export const Container = styled.div`
 	width: 100%;
 	max-width: 1220px;
 	margin: 0 auto;
+
+	${MOBILE} {
+		grid-template-columns: 1fr;
+	}
 `
 
 export const Company = styled(UICompany)``

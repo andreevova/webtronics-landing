@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE } from '@/constants'
 import { Section, Title as UITitle } from '@/components/elements'
 import { Item as UIItem } from './components'
 
@@ -15,11 +16,24 @@ export const Grid = styled.div`
 	grid-template-columns: 1fr 2fr;
 	grid-gap: 25px;
 	margin-top: 55px;
+
+	${MOBILE} {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
 `
 
 export const Side = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	${MOBILE} {
+		align-items: center;
+
+		&:last-child {
+			margin-top: 50px;
+		}
+	}
 `
 
 export const Text = styled.p`

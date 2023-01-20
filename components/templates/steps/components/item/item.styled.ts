@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { MOBILE } from '@/constants'
 import { DotAndArrowSvg, BorderSvg } from './img'
 
 export const Element = styled.div<{ reverse: boolean }>`
@@ -56,6 +57,10 @@ export const Insert = styled(DotAndArrowSvg).withConfig<{ reverse: boolean }>({ 
 			transform: scaleX(-1);
 			margin: 0 25px 0 0;
 		`}
+
+	${MOBILE} {
+		display: none;
+	}
 `
 
 export const BorderWrapper = styled.div<{ reverse: boolean }>`

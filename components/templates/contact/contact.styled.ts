@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { Section, Title as UITitle } from '@/components/elements'
-import { Input as UIInput, Button as UIButton } from '@/components/elements'
+import { MOBILE } from '@/constants'
+import { Section, Title as UITitle, Input as UIInput, Button as UIButton } from '@/components/elements'
 
 export const Element = styled(Section)`
 	position: relative;
 	padding: 55px;
 	border-radius: 20px;
 	background: rgba(255, 255, 255, 0.05);
+	box-sizing: border-box;
 
 	&::before {
 		content: '';
@@ -19,6 +20,10 @@ export const Element = styled(Section)`
 		-webkit-mask-composite: xor;
 		mask-composite: exclude;
 		z-index: -1;
+	}
+
+	${MOBILE} {
+		padding: 30px;
 	}
 `
 

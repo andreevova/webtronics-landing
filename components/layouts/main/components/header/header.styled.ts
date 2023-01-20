@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
 import { colord } from 'colord'
-import { NOT_SUPPORT_BLUR, SUPPORT_BLUR } from '@/constants'
+import { MOBILE, NOT_SUPPORT_BLUR, SUPPORT_BLUR } from '@/constants'
 
 export const Element = styled.header<{ fixed: boolean }>`
 	position: sticky;
@@ -28,13 +28,16 @@ export const Container = styled.div<{ fixed: boolean }>`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: center;
 	align-self: center;
 	width: 100%;
 	max-width: 1220px;
 	padding: ${(p) => (p.fixed ? '20px' : '40px')} 0;
 	margin: 0 auto;
 	transition: padding 0.3s ease;
+
+	${MOBILE} {
+		justify-content: center;
+	}
 `
 
 export const Logo = styled(Image)`
@@ -44,6 +47,10 @@ export const Logo = styled(Image)`
 
 export const Nav = styled.nav`
 	margin-left: auto;
+
+	${MOBILE} {
+		display: none;
+	}
 `
 
 export const Link = styled.a`

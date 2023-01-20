@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE } from '@/constants'
 import { Header as UIHeader, Footer as UIFooter } from './components'
 
 export const Element = styled.main`
@@ -18,4 +19,8 @@ export const Outlet = styled.main`
 
 export const Footer = styled(UIFooter)`
 	margin-top: 100px;
+
+	${MOBILE} {
+		margin-top: 55px;
+	}
 `

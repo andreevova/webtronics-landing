@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE } from '@/constants'
 import { Section, Title as UITitle } from '@/components/elements'
 import { Gallery as UIGallery } from './components'
 
@@ -15,9 +16,19 @@ export const Container = styled.div`
 	grid-gap: 25px;
 	margin-top: 55px;
 	align-items: center;
+
+	${MOBILE} {
+		display: flex;
+		flex-direction: column-reverse;
+	}
 `
 
-export const Main = styled.div``
+export const Main = styled.div`
+	${MOBILE} {
+		margin-top: 30px;
+		text-align: center;
+	}
+`
 
 export const Subtitle = styled.h4`
 	font-family: 'ClashDisplay-Medium';

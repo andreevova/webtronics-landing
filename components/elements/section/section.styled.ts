@@ -1,3 +1,4 @@
+import { MOBILE } from '@/constants'
 import styled from 'styled-components'
 
 export const Element = styled.section`
@@ -7,4 +8,8 @@ export const Element = styled.section`
 	max-width: 1220px;
 	align-self: center;
 	margin: 100px 0;
+
+	${MOBILE} {
+		margin: 55px 0;
+	}
 `
